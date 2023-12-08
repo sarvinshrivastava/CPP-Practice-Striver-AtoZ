@@ -2,27 +2,22 @@
 
 using namespace std;
 
-int addTwoNumbers(int a, int b) {
-    return a + b;
-}
+long long reverse(long long x) {
+    long long rev = 0;
 
-void testAddTwoNumbers() {
-    cout << "Running testAddTwoNumbers..." << endl;
-
-    int a = 5;
-    int b = 3;
-    int expectedResult = 8;
-
-    int result = addTwoNumbers(a, b);
-
-    if (result == expectedResult) {
-        cout << "Test passed!" << endl;
-    } else {
-        cout << "Test failed! Expected result: " << expectedResult << ", but got: " << result << endl;
+    while (x) {
+        rev = rev * 10 + x % 10;
+        x /= 10;
     }
+
+    return rev;
 }
 
 int main() {
-    testAddTwoNumbers();
+    long long n;
+
+    cin >> n;
+    cout << reverse(n);
+    
     return 0;
 }
